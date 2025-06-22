@@ -155,7 +155,8 @@ class rosu:
         except Exception as e:
             log.error(f"rosu ~> Error calculating PP: {e}")
             self.pp = 0
-            self.stars = 0        finally:
+            self.stars = 0        
+        finally:
             log.debug(f"rosu ~> Shutting down, pp = {self.pp}")
 
     def _isBrokenMap(self, result):
