@@ -13,7 +13,7 @@ from common.web import requestsManager
 from constants import exceptions
 from helpers import osuapiHelper
 from objects import glob
-from pp import rosuppai as rippoppai
+from pp import rosupp as rippoppai
 from common.sentry import sentry
 
 MODULE_NAME = "api/pp"
