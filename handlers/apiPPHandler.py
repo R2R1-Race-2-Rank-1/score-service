@@ -13,7 +13,7 @@ from common.web import requestsManager
 from constants import exceptions
 from helpers import osuapiHelper
 from objects import glob
-from pp import rippoppai
+from pp import rosuppai as rippoppai
 from common.sentry import sentry
 
 MODULE_NAME = "api/pp"
@@ -106,7 +106,7 @@ class handler(requestsManager.asyncRequestHandler):
 					else:
 						log.debug("Cached pp not found. Calculating pp with oppai...")
 						# Cached pp not found, calculate them
-						oppai = rippoppai.oppai(bmap, mods=modsEnum, tillerino=True)
+						oppai = rippoppai.rosu(bmap, mods=modsEnum, tillerino=True)
 						returnPP = oppai.pp
 						bmap.starsStd = oppai.stars
 
@@ -118,7 +118,7 @@ class handler(requestsManager.asyncRequestHandler):
 					# Specific accuracy, calculate
 					# Create oppai instance
 					log.debug("Specific request ({}%/{}). Calculating pp with oppai...".format(accuracy, modsEnum))
-					oppai = rippoppai.oppai(bmap, mods=modsEnum, tillerino=True)
+					oppai = rippoppai.rosu(bmap, mods=modsEnum, tillerino=True)
 					bmap.starsStd = oppai.stars
 					if accuracy > 0:
 						returnPP.append(calculatePPFromAcc(oppai, accuracy))
