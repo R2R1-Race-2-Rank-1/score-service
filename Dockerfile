@@ -16,11 +16,11 @@ RUN pip3 install --no-cache-dir --trusted-host pypi.python.org -r requirements.t
 
 ADD . .
 
-RUN python3.7 setup.py build_ext --inplace
+RUN python3 setup.py build_ext --inplace
 
 # agree to license
 RUN mkdir ~/.config && touch ~/.config/ripple_license_agreed
 
 EXPOSE 80
 
-CMD ["python3.7", "-u", "lets.py"]
+CMD ["python3", "-u", "lets.py"]
