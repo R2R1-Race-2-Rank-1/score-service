@@ -1,4 +1,4 @@
-FROM python:3.7-bullseye
+FROM python:3.9-bullseye
 
 WORKDIR /let.s
 ADD requirements.txt .
