@@ -79,9 +79,9 @@ class rosu:
         """
         self.pp = None
 
-        try:
-            # Prepare beatmap on disk
-            mapFile = mapsHelper.cachedMapPath(self.beatmap.beatmapID)            log.debug(f"rosu ~> Map file: {mapFile}")
+        try:            # Prepare beatmap on disk
+            mapFile = mapsHelper.cachedMapPath(self.beatmap.beatmapID)
+            log.debug(f"rosu ~> Map file: {mapFile}")
             mapsHelper.cacheMap(mapFile, self.beatmap)
 
             # Load with rosu-pp-py
